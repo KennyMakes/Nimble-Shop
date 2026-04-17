@@ -1402,6 +1402,21 @@ var ShopCompendiumImportDialog = class _ShopCompendiumImportDialog extends found
     this._bindUi(root);
     const scrollHost = root.querySelector("[data-import-scroll]");
     if (scrollHost) scrollHost.scrollTop = this._scrollTop ?? 0;
+    if (this._searchFocus) {
+      const searchInput = root.querySelector('[data-action="search"]');
+      if (searchInput) {
+        const start = Number.isInteger(this._searchSelectionStart) ? this._searchSelectionStart : String(this.searchText ?? "").length;
+        const end = Number.isInteger(this._searchSelectionEnd) ? this._searchSelectionEnd : start;
+        requestAnimationFrame(() => {
+          searchInput.focus();
+          try {
+            searchInput.setSelectionRange(start, end);
+          } catch (_error) {
+          }
+        });
+      }
+      this._searchFocus = false;
+    }
   }
   _attachPartListeners(partId, htmlElement, options) {
     super._attachPartListeners(partId, htmlElement, options);
@@ -1468,6 +1483,9 @@ var ShopCompendiumImportDialog = class _ShopCompendiumImportDialog extends found
       const action = target.dataset.action;
       if (action === 'search') {
         this.searchText = target.value ?? '';
+        this._searchFocus = true;
+        this._searchSelectionStart = target.selectionStart ?? String(target.value ?? "").length;
+        this._searchSelectionEnd = target.selectionEnd ?? this._searchSelectionStart;
         this._scrollTop = host.querySelector('[data-import-scroll]')?.scrollTop ?? 0;
         await this.render(true);
       }
