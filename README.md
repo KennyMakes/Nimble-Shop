@@ -1,7 +1,7 @@
 # Nimble Shop
 
 A journal-backed storefront module for the **Nimble** system in **Foundry Virtual Tabletop v13**.
-
+<img width="979" height="763" alt="Standard Shop View" src="https://github.com/user-attachments/assets/5adee26d-25a2-4c4f-8260-8ac21594896b" />
 Nimble Shop turns a journal entry into a working in-game shop with GM-managed stock, player buying and selling, hidden inventory, custom orders, presets, and optional till-based economy controls.
 
 ---
@@ -84,6 +84,8 @@ Change the journal entry to use the **Nimble Shop** sheet.
 
 ### 3. Open the GM editor
 Inside the shop page, click **GM Editor**.
+<img width="1055" height="879" alt="Shop Editor - Basics" src="https://github.com/user-attachments/assets/b9d9d732-f885-4e22-9870-0bdd653060d5" />
+<img width="1053" height="325" alt="Shop Editor - Actor Pricing" src="https://github.com/user-attachments/assets/a4173bfd-58cd-4332-ae59-4d652f9cd325" />
 
 ### 4. Configure the shop
 Use the editor to set up:
@@ -95,9 +97,13 @@ Use the editor to set up:
 - stock tables
 - hidden stock access
 - custom order settings
+- Custom actor settings
+<img width="1053" height="325" alt="Shop Editor - Actor Pricing" src="https://github.com/user-attachments/assets/47d03ca7-7eae-4bb5-b8e8-9a7aad995092" />
 
 ### 5. Add stock
 Populate the shop with items and pricing.
+<img width="888" height="877" alt="Shop Editor - Stock Table" src="https://github.com/user-attachments/assets/8f669617-22d1-478a-9aa4-ee3064bbe4ca" />
+
 
 ### 6. Test as a player
 Open the storefront from a player account and verify:
@@ -113,15 +119,19 @@ Open the storefront from a player account and verify:
 
 ### Standard shop
 Players can browse visible inventory and buy items into actor inventory.
+<img width="979" height="763" alt="Standard Shop View" src="https://github.com/user-attachments/assets/0e1e9ea7-c5b7-4706-bb8e-5370252117c8" />
 
 ### Sell tab
 Players can search and filter their actor inventory, then sell eligible items back to the store.
+<img width="979" height="761" alt="Standard Shop View - Sell" src="https://github.com/user-attachments/assets/1debc145-e773-48c8-b232-48df2a858f4c" />
 
 ### Hidden shop
 GMs can define hidden stock and allow only specific actors to view and buy from it.
+<img width="985" height="764" alt="Hidden Shop View" src="https://github.com/user-attachments/assets/f9ec188e-e200-4f1f-acc6-ee793b7bf991" />
 
 ### Custom orders
 Players can place orders for special-order items. GMs can later review, fulfill, and track those orders.
+<img width="981" height="761" alt="Custom Orders View" src="https://github.com/user-attachments/assets/ee15d542-6fb5-4517-89f4-8483474efd50" />
 
 ### Closed shop
 When a shop is closed:
@@ -129,6 +139,7 @@ When a shop is closed:
 - interaction is blocked
 - a closed message is shown
 - GMs can still access the editor and reopen the shop
+<img width="985" height="762" alt="Closed Shop View" src="https://github.com/user-attachments/assets/ea5231a8-a60f-446f-9530-80036058e902" />
 
 ---
 
