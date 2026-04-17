@@ -1,0 +1,35 @@
+{
+  "id": "nimble-shop",
+  "title": "Nimble Shop",
+  "description": "Journal-backed storefronts, sellback, hidden inventory, and custom orders for Nimble in Foundry VTT v13.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "KennyMakes"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13",
+    "verified": "13",
+    "maximum": "13"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "nimble",
+        "type": "system",
+        "compatibility": {
+          "minimum": "0.7.0"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/init.js"
+  ],
+  "styles": [],
+  "url": "https://github.com/KennyMakes/nimble-shop",
+  "manifest": "https://github.com/KennyMakes/nimble-shop/releases/latest/download/module.json",
+  "download": "https://github.com/KennyMakes/nimble-shop/releases/latest/download/nimble-shop.zip",
+  "socket": true
+}
