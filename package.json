@@ -1,0 +1,9 @@
+{
+  "name": "nimble-shop",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build-init.mjs",
+    "build:check": "npm run build && git diff --exit-code -- scripts/init.js"
+  }
+}

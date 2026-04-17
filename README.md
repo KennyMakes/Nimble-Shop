@@ -155,3 +155,28 @@ This is optional and can be left off for a simpler storefront experience.
 - An active GM is recommended for live player transactions.
 - This module is designed specifically for **Nimble** and is not system-agnostic.
 - This first public release focuses on core shop workflows rather than broader economy automation outside the storefront.
+---
+
+## Development workflow
+
+The repository now keeps source code and release output as separate layers:
+
+- `src/` contains the editable source fragments, grouped by shop feature area.
+- `scripts/init.js` is the generated distributable loaded by Foundry.
+
+### Build
+
+```bash
+npm run build
+```
+
+This command rebuilds `scripts/init.js` from `build-manifest.json` and the files in `src/`.
+
+### Validate generated output
+
+```bash
+npm run build:check
+```
+
+This rebuilds and fails if `scripts/init.js` is out of date.
+

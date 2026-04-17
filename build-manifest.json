@@ -1,0 +1,82 @@
+[
+  {
+    "source": "src/shop/constants.js",
+    "banner": "// scripts/shop/constants.ts"
+  },
+  {
+    "source": "src/shop/helpers/actors.js",
+    "banner": "// scripts/shop/helpers/actors.ts"
+  },
+  {
+    "source": "src/shop/helpers/currency.js",
+    "banner": "// scripts/shop/helpers/currency.ts"
+  },
+  {
+    "source": "src/shop/helpers/inventory.js",
+    "banner": "// scripts/shop/helpers/inventory.ts"
+  },
+  {
+    "source": "src/shop/helpers/journal.js",
+    "banner": "// scripts/shop/helpers/journal.ts"
+  },
+  {
+    "source": "src/shop/helpers/stock.js",
+    "banner": "// scripts/shop/helpers/stock.ts"
+  },
+  {
+    "source": "src/shop/apps/shopGmEditor.js",
+    "banner": "// scripts/shop/apps/shopGmEditor.ts"
+  },
+  {
+    "source": "src/shop/helpers/feedback.js",
+    "banner": "// scripts/shop/helpers/feedback.ts"
+  },
+  {
+    "source": "src/shop/helpers/pricing.js",
+    "banner": "// scripts/shop/helpers/pricing.ts"
+  },
+  {
+    "source": "src/shop/helpers/validation.js",
+    "banner": "// scripts/shop/helpers/validation.ts"
+  },
+  {
+    "source": "src/shop/transactions/buy.js",
+    "banner": "// scripts/shop/transactions/buy.ts"
+  },
+  {
+    "source": "src/shop/helpers/matching.js",
+    "banner": "// scripts/shop/helpers/matching.ts"
+  },
+  {
+    "source": "src/shop/transactions/sell.js",
+    "banner": "// scripts/shop/transactions/sell.ts"
+  },
+  {
+    "source": "src/shop/apps/shopApp.js",
+    "banner": "// scripts/shop/apps/shopApp.ts"
+  },
+  {
+    "source": "src/shop/transactions/resetStock.js",
+    "banner": "// scripts/shop/transactions/resetStock.ts"
+  },
+  {
+    "source": "src/shop/api/shopApi.js",
+    "banner": "// scripts/shop/api/shopApi.ts"
+  },
+  {
+    "source": "src/shop/helpers/receipts.js",
+    "banner": "// scripts/shop/helpers/receipts.ts"
+  },
+  {
+    "source": "src/shop/settings.js",
+    "banner": "// scripts/shop/settings.ts"
+  },
+  {
+    "source": "src/shop/index.js",
+    "banner": "// scripts/shop/index.ts"
+  },
+  {
+    "source": "src/init.js",
+    "banner": "// scripts/init.ts"
+  }
+]

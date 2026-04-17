@@ -482,7 +482,6 @@ async function removeSoldItemFromActor(actor, item, quantity) {
 }
 
 // scripts/shop/helpers/journal.ts
-
 function normalizeActorPricingEntry(entry) {
   const modeRaw = String(entry?.mode ?? "discount").toLowerCase();
   const mode = modeRaw === "markup" || modeRaw === "surcharge" ? "markup" : "discount";
@@ -2380,7 +2379,6 @@ var ShopGmEditor = class _ShopGmEditor extends foundry.applications.api.Handleba
   }
 };
 
-
 // scripts/shop/helpers/feedback.ts
 function formatSpFriendly(totalSp) {
   return formatNormalizedCurrency(totalSp);
@@ -4256,6 +4254,7 @@ async function createShopReceipt(kind, payload) {
     console.error(`${SHOP_MODULE_ID} | Failed to create shop receipt`, error);
   }
 }
+
 // scripts/shop/settings.ts
 var SHOP_REALISTIC_ECONOMY_ENABLED_SETTING_KEY = "realisticEconomyEnabled";
 var SHOP_RESTOCK_COST_PERCENT_SETTING_KEY = "restockCostPercent";
