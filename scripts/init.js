@@ -2872,7 +2872,9 @@ async function executeSpecialOrderTransaction(journalEntry, actor, stockEntryId,
   if (!subtractResult.ok) return subtractResult;
   if (isRealisticEconomyEnabled()) shopData.economy.availableFundsSp = Math.max(0, Math.floor(Number(shopData.economy.availableFundsSp ?? 0) || 0)) + Math.max(0, Math.floor(Number(totals.finalTotalSp) || 0));
   appendTransactionHistoryEntry(shopData, { type: "special-order", actorId: actor.id, actorNameSnapshot: actor.name, itemName: stockEntry.name, quantity: Math.floor(quantity), totalSp: totals.finalTotalSp, timestampMs: Date.now(), itemImg: stockEntry.img ?? stockEntry?.itemSnapshot?.img ?? "icons/svg/item-bag.svg", note: stockEntry.leadTimeLabel || "" });
-  shopData.orderManagement.pendingOrders.push(normalizePendingOrder({
+  if (!shopData.orderManagement || typeof shopData.orderManagement !== "object") shopData.orderManagement = { pendingOrders: [], fulfilledOrders: [] };
+  if (!Array.isArray(shopData.orderManagement.pendingOrders)) shopData.orderManagement.pendingOrders = [];
+  const pendingOrderPayload = {
     actorId: actor.id,
     actorNameSnapshot: actor.name,
     itemName: stockEntry.name,
@@ -2886,7 +2888,9 @@ async function executeSpecialOrderTransaction(journalEntry, actor, stockEntryId,
     description: stockEntry.description ?? "",
     itemSnapshot: foundry.utils.deepClone(stockEntry.itemSnapshot ?? { name: stockEntry.name, type: stockEntry.itemType ?? "object", img: stockEntry.img ?? "icons/svg/item-bag.svg", system: { quantity: 1 } }),
     status: "pending"
-  }));
+  };
+  const pendingOrder = typeof normalizePendingOrder === "function" ? normalizePendingOrder(pendingOrderPayload) : pendingOrderPayload;
+  shopData.orderManagement.pendingOrders.push(pendingOrder);
   const persistResult = await updateShopData(journalEntry, shopData);
   if (!persistResult.ok) return { ok: false, code: "UPDATE_FAILED", message: "Funds were deducted, but the special order could not be saved. GM should review pending orders.", data: { actorId: actor.id, stockEntryId, quantity, previousFailure: persistResult } };
   await createShopReceipt("special-order", { actor, actorName: actor.name, itemName: stockEntry.name, quantity: Math.floor(quantity), amountSp: totals.finalTotalSp, itemImg: stockEntry.img ?? stockEntry?.itemSnapshot?.img ?? "icons/svg/item-bag.svg", shopName: shopData.shopName, shopId: shopData.shopId, timestampMs: Date.now(), leadTimeLabel: stockEntry.leadTimeLabel || "", note: stockEntry.specialOrderNote || "" });
