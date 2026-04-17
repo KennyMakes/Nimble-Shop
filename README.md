@@ -51,7 +51,7 @@ Nimble Shop gives GMs a reusable storefront workflow inside Foundry:
 Use this URL in Foundry's **Install Module** dialog:
 
 ```text
-https://github.com/KennyMakes/nimble-shop/releases/latest/download/module.json
+https://github.com/KennyMakes/Nimble-Shop/releases/latest/download/module.json
 ```
 
 ### Manual installation
